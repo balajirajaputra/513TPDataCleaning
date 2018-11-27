@@ -1,0 +1,48 @@
+''' 
+@begin Farmers_Markets_Data_Cleaning_E2E @desc your code here or load one of the sample scripts
+@in farmersmarkets.csv @uri file://data/farmersmarkets.csv
+
+    @begin CleanFarmersMarketDataWithOpenRefine @desc Use OpenRefine to clean farmersmarkets.csv
+    @in farmersmarkets.csv @uri file://data/farmersmarkets.csv
+    @param CleanFarmersMarketDataActivties
+    @out FarmersMarkets-Address.csv @uri file://data/clean/FarmersMarkets-Address.csv
+    @out FarmersMarkets-Products.csv @uri file://data/clean/FarmersMarkets-Products.csv
+    @out FarmersMarkets-SocialMedia.csv @uri file://data/clean/FarmersMarkets-SocialMedia.csv
+    @end CleanFarmersMarketDataWithOpenRefine
+
+    @begin SQLOperationsOnfarmersmarketsAddress @desc Use SQLLite to load FarmersMarketAdrress into table
+    @in FarmersMarkets-Address.csv @uri file://data/clean/FarmersMarkets-Address.csv
+    @param FarmersMarketsAdressImport
+    @out Farmers_Markets_Address @uri sqlite://FarmersMarket.db/Farmers_Markets_Address
+    @end SQLOperationsOnfarmersmarketsAddress
+
+    @begin SQLOperationsOnfarmersmarketsProducts @desc Use SQLLite to load FarmersMarketProducts into table
+    @in FarmersMarkets-Products.csv @uri file://data/clean/FarmersMarkets-Products.csv
+    @param FarmersMarketsProductsImport
+    @out Farmers_Markets_Products @uri sqlite://FarmersMarket.db/Farmers_Markets_Products
+    @end SQLOperationsOnfarmersmarketsProducts
+    
+    @begin SQLOperationsOnfarmersmarketsSocialMedia @desc Use SQLLite to load FarmersMarketSocialMedia into table
+    @in FarmersMarkets-SocialMedia.csv @uri file://data/clean/FarmersMarkets-SocialMedia.csv
+    @param FarmersMarketsSocialMediaImport
+    @out Farmers_Markets_SocialMedia @uri sqlite://FarmersMarket.db/Farmers_Markets_SocialMedia
+    @end SQLOperationsOnfarmersmarketsSocialMedia
+    
+    @begin SQLConstrainsValidations @desc Perform SQL integrity constraints check
+    @in Farmers_Markets_Address @uri sqlite://FarmersMarket.db/Farmers_Markets_Address
+    @in Farmers_Markets_Products @uri sqlite://FarmersMarket.db/Farmers_Markets_Products
+    @in Farmers_Markets_SocialMedia @uri sqlite://FarmersMarket.db/Farmers_Markets_SocialMedia
+    @param IntegrityConstraint_FunctionalDependenciesScript
+    @out Farmers_Markets_Address_Final @uri sqlite://FarmersMarket.db/Farmers_Markets_Address
+    @out Farmers_Markets_Products_Final @uri sqlite://FarmersMarket.db/Farmers_Markets_Products
+    @out Farmers_Markets_SocialMedia_Final @uri sqlite://FarmersMarket.db/Farmers_Markets_SocialMedia
+    @end SQLConstrainsValidations
+  
+    @out Farmers_Markets_Address_Final @uri sqlite://FarmersMarket.db/Farmers_Markets_Address
+    @out Farmers_Markets_Products_Final @uri sqlite://FarmersMarket.db/Farmers_Markets_Products
+    @out Farmers_Markets_SocialMedia_Final @uri sqlite://FarmersMarket.db/Farmers_Markets_SocialMedia
+
+  
+@end Farmers_Markets_Data_Cleaning_E2E
+
+'''

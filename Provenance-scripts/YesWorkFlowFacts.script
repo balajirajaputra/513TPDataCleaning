@@ -1,0 +1,273 @@
+
+% FACT: program(program_id, program_name, qualified_program_name, begin_annotation_id, end_annotation_id).
+program(1, 'Farmers_Markets_Data_Cleaning_E2E', 'Farmers_Markets_Data_Cleaning_E2E', 1, 63).
+program(2, 'CleanFarmersMarketDataWithOpenRefine', 'Farmers_Markets_Data_Cleaning_E2E.CleanFarmersMarketDataWithOpenRefine', 5, 16).
+program(3, 'SQLOperationsOnfarmersmarketsAddress', 'Farmers_Markets_Data_Cleaning_E2E.SQLOperationsOnfarmersmarketsAddress', 17, 24).
+program(4, 'SQLOperationsOnfarmersmarketsProducts', 'Farmers_Markets_Data_Cleaning_E2E.SQLOperationsOnfarmersmarketsProducts', 25, 32).
+program(5, 'SQLOperationsOnfarmersmarketsSocialMedia', 'Farmers_Markets_Data_Cleaning_E2E.SQLOperationsOnfarmersmarketsSocialMedia', 33, 40).
+program(6, 'SQLConstrainsValidations', 'Farmers_Markets_Data_Cleaning_E2E.SQLConstrainsValidations', 41, 56).
+
+% FACT: workflow(program_id).
+workflow(1).
+
+% FACT: function(program_id).
+
+% FACT: has_subprogram(program_id, subprogram_id).
+has_subprogram(1, 2).
+has_subprogram(1, 3).
+has_subprogram(1, 4).
+has_subprogram(1, 5).
+has_subprogram(1, 6).
+
+% FACT: port(port_id, port_type, port_name, qualified_port_name, port_annotation_id, data_id).
+port(1, 'in', 'farmersmarkets.csv', 'Farmers_Markets_Data_Cleaning_E2E<-farmersmarkets.csv', 3, 1).
+port(23, 'out', 'Farmers_Markets_Address_Final', 'Farmers_Markets_Data_Cleaning_E2E->Farmers_Markets_Address_Final', 57, 17).
+port(24, 'out', 'Farmers_Markets_Products_Final', 'Farmers_Markets_Data_Cleaning_E2E->Farmers_Markets_Products_Final', 59, 18).
+port(25, 'out', 'Farmers_Markets_SocialMedia_Final', 'Farmers_Markets_Data_Cleaning_E2E->Farmers_Markets_SocialMedia_Final', 61, 19).
+port(2, 'in', 'farmersmarkets.csv', 'Farmers_Markets_Data_Cleaning_E2E.CleanFarmersMarketDataWithOpenRefine<-farmersmarkets.csv', 7, 2).
+port(3, 'param', 'CleanFarmersMarketDataActivties', 'Farmers_Markets_Data_Cleaning_E2E.CleanFarmersMarketDataWithOpenRefine<-CleanFarmersMarketDataActivties', 9, 3).
+port(4, 'out', 'FarmersMarkets-Address.csv', 'Farmers_Markets_Data_Cleaning_E2E.CleanFarmersMarketDataWithOpenRefine->FarmersMarkets-Address.csv', 10, 4).
+port(5, 'out', 'FarmersMarkets-Products.csv', 'Farmers_Markets_Data_Cleaning_E2E.CleanFarmersMarketDataWithOpenRefine->FarmersMarkets-Products.csv', 12, 5).
+port(6, 'out', 'FarmersMarkets-SocialMedia.csv', 'Farmers_Markets_Data_Cleaning_E2E.CleanFarmersMarketDataWithOpenRefine->FarmersMarkets-SocialMedia.csv', 14, 6).
+port(7, 'in', 'FarmersMarkets-Address.csv', 'Farmers_Markets_Data_Cleaning_E2E.SQLOperationsOnfarmersmarketsAddress<-FarmersMarkets-Address.csv', 19, 4).
+port(8, 'param', 'FarmersMarketsAdressImport', 'Farmers_Markets_Data_Cleaning_E2E.SQLOperationsOnfarmersmarketsAddress<-FarmersMarketsAdressImport', 21, 7).
+port(9, 'out', 'Farmers_Markets_Address', 'Farmers_Markets_Data_Cleaning_E2E.SQLOperationsOnfarmersmarketsAddress->Farmers_Markets_Address', 22, 8).
+port(10, 'in', 'FarmersMarkets-Products.csv', 'Farmers_Markets_Data_Cleaning_E2E.SQLOperationsOnfarmersmarketsProducts<-FarmersMarkets-Products.csv', 27, 5).
+port(11, 'param', 'FarmersMarketsProductsImport', 'Farmers_Markets_Data_Cleaning_E2E.SQLOperationsOnfarmersmarketsProducts<-FarmersMarketsProductsImport', 29, 9).
+port(12, 'out', 'Farmers_Markets_Products', 'Farmers_Markets_Data_Cleaning_E2E.SQLOperationsOnfarmersmarketsProducts->Farmers_Markets_Products', 30, 10).
+port(13, 'in', 'FarmersMarkets-SocialMedia.csv', 'Farmers_Markets_Data_Cleaning_E2E.SQLOperationsOnfarmersmarketsSocialMedia<-FarmersMarkets-SocialMedia.csv', 35, 6).
+port(14, 'param', 'FarmersMarketsSocialMediaImport', 'Farmers_Markets_Data_Cleaning_E2E.SQLOperationsOnfarmersmarketsSocialMedia<-FarmersMarketsSocialMediaImport', 37, 11).
+port(15, 'out', 'Farmers_Markets_SocialMedia', 'Farmers_Markets_Data_Cleaning_E2E.SQLOperationsOnfarmersmarketsSocialMedia->Farmers_Markets_SocialMedia', 38, 12).
+port(16, 'in', 'Farmers_Markets_Address', 'Farmers_Markets_Data_Cleaning_E2E.SQLConstrainsValidations<-Farmers_Markets_Address', 43, 8).
+port(17, 'in', 'Farmers_Markets_Products', 'Farmers_Markets_Data_Cleaning_E2E.SQLConstrainsValidations<-Farmers_Markets_Products', 45, 10).
+port(18, 'in', 'Farmers_Markets_SocialMedia', 'Farmers_Markets_Data_Cleaning_E2E.SQLConstrainsValidations<-Farmers_Markets_SocialMedia', 47, 12).
+port(19, 'param', 'IntegrityConstraint_FunctionalDependenciesScript', 'Farmers_Markets_Data_Cleaning_E2E.SQLConstrainsValidations<-IntegrityConstraint_FunctionalDependenciesScript', 49, 13).
+port(20, 'out', 'Farmers_Markets_Address_Final', 'Farmers_Markets_Data_Cleaning_E2E.SQLConstrainsValidations->Farmers_Markets_Address_Final', 50, 14).
+port(21, 'out', 'Farmers_Markets_Products_Final', 'Farmers_Markets_Data_Cleaning_E2E.SQLConstrainsValidations->Farmers_Markets_Products_Final', 52, 15).
+port(22, 'out', 'Farmers_Markets_SocialMedia_Final', 'Farmers_Markets_Data_Cleaning_E2E.SQLConstrainsValidations->Farmers_Markets_SocialMedia_Final', 54, 16).
+
+% FACT: port_alias(port_id, alias).
+
+% FACT: port_uri_template(port_id, uri).
+port_uri_template(1, 'file://data/farmersmarkets.csv').
+port_uri_template(23, 'sqlite://FarmersMarket.db/Farmers_Markets_Address').
+port_uri_template(24, 'sqlite://FarmersMarket.db/Farmers_Markets_Products').
+port_uri_template(25, 'sqlite://FarmersMarket.db/Farmers_Markets_SocialMedia').
+port_uri_template(2, 'file://data/farmersmarkets.csv').
+port_uri_template(4, 'file://data/clean/FarmersMarkets-Address.csv').
+port_uri_template(5, 'file://data/clean/FarmersMarkets-Products.csv').
+port_uri_template(6, 'file://data/clean/FarmersMarkets-SocialMedia.csv').
+port_uri_template(7, 'file://data/clean/FarmersMarkets-Address.csv').
+port_uri_template(9, 'sqlite://FarmersMarket.db/Farmers_Markets_Address').
+port_uri_template(10, 'file://data/clean/FarmersMarkets-Products.csv').
+port_uri_template(12, 'sqlite://FarmersMarket.db/Farmers_Markets_Products').
+port_uri_template(13, 'file://data/clean/FarmersMarkets-SocialMedia.csv').
+port_uri_template(15, 'sqlite://FarmersMarket.db/Farmers_Markets_SocialMedia').
+port_uri_template(16, 'sqlite://FarmersMarket.db/Farmers_Markets_Address').
+port_uri_template(17, 'sqlite://FarmersMarket.db/Farmers_Markets_Products').
+port_uri_template(18, 'sqlite://FarmersMarket.db/Farmers_Markets_SocialMedia').
+port_uri_template(20, 'sqlite://FarmersMarket.db/Farmers_Markets_Address').
+port_uri_template(21, 'sqlite://FarmersMarket.db/Farmers_Markets_Products').
+port_uri_template(22, 'sqlite://FarmersMarket.db/Farmers_Markets_SocialMedia').
+
+% FACT: has_in_port(block_id, port_id).
+has_in_port(1, 1).
+has_in_port(2, 2).
+has_in_port(2, 3).
+has_in_port(3, 7).
+has_in_port(3, 8).
+has_in_port(4, 10).
+has_in_port(4, 11).
+has_in_port(5, 13).
+has_in_port(5, 14).
+has_in_port(6, 16).
+has_in_port(6, 17).
+has_in_port(6, 18).
+has_in_port(6, 19).
+
+% FACT: has_out_port(block_id, port_id).
+has_out_port(1, 23).
+has_out_port(1, 24).
+has_out_port(1, 25).
+has_out_port(2, 4).
+has_out_port(2, 5).
+has_out_port(2, 6).
+has_out_port(3, 9).
+has_out_port(4, 12).
+has_out_port(5, 15).
+has_out_port(6, 20).
+has_out_port(6, 21).
+has_out_port(6, 22).
+
+% FACT: data(data_id, data_name, qualified_data_name).
+data(1, 'farmersmarkets.csv', '[farmersmarkets.csv]').
+data(17, 'Farmers_Markets_Address_Final', '[Farmers_Markets_Address_Final]').
+data(18, 'Farmers_Markets_Products_Final', '[Farmers_Markets_Products_Final]').
+data(19, 'Farmers_Markets_SocialMedia_Final', '[Farmers_Markets_SocialMedia_Final]').
+data(2, 'farmersmarkets.csv', 'Farmers_Markets_Data_Cleaning_E2E[farmersmarkets.csv]').
+data(3, 'CleanFarmersMarketDataActivties', 'Farmers_Markets_Data_Cleaning_E2E[CleanFarmersMarketDataActivties]').
+data(4, 'FarmersMarkets-Address.csv', 'Farmers_Markets_Data_Cleaning_E2E[FarmersMarkets-Address.csv]').
+data(5, 'FarmersMarkets-Products.csv', 'Farmers_Markets_Data_Cleaning_E2E[FarmersMarkets-Products.csv]').
+data(6, 'FarmersMarkets-SocialMedia.csv', 'Farmers_Markets_Data_Cleaning_E2E[FarmersMarkets-SocialMedia.csv]').
+data(7, 'FarmersMarketsAdressImport', 'Farmers_Markets_Data_Cleaning_E2E[FarmersMarketsAdressImport]').
+data(8, 'Farmers_Markets_Address', 'Farmers_Markets_Data_Cleaning_E2E[Farmers_Markets_Address]').
+data(9, 'FarmersMarketsProductsImport', 'Farmers_Markets_Data_Cleaning_E2E[FarmersMarketsProductsImport]').
+data(10, 'Farmers_Markets_Products', 'Farmers_Markets_Data_Cleaning_E2E[Farmers_Markets_Products]').
+data(11, 'FarmersMarketsSocialMediaImport', 'Farmers_Markets_Data_Cleaning_E2E[FarmersMarketsSocialMediaImport]').
+data(12, 'Farmers_Markets_SocialMedia', 'Farmers_Markets_Data_Cleaning_E2E[Farmers_Markets_SocialMedia]').
+data(13, 'IntegrityConstraint_FunctionalDependenciesScript', 'Farmers_Markets_Data_Cleaning_E2E[IntegrityConstraint_FunctionalDependenciesScript]').
+data(14, 'Farmers_Markets_Address_Final', 'Farmers_Markets_Data_Cleaning_E2E[Farmers_Markets_Address_Final]').
+data(15, 'Farmers_Markets_Products_Final', 'Farmers_Markets_Data_Cleaning_E2E[Farmers_Markets_Products_Final]').
+data(16, 'Farmers_Markets_SocialMedia_Final', 'Farmers_Markets_Data_Cleaning_E2E[Farmers_Markets_SocialMedia_Final]').
+
+% FACT: channel(channel_id, data_id).
+channel(1, 2).
+channel(2, 4).
+channel(3, 5).
+channel(4, 6).
+channel(5, 8).
+channel(6, 10).
+channel(7, 12).
+channel(8, 17).
+channel(9, 18).
+channel(10, 19).
+channel(11, 1).
+channel(12, 14).
+channel(13, 15).
+channel(14, 16).
+
+% FACT: port_connects_to_channel(port_id, channel_id).
+port_connects_to_channel(2, 1).
+port_connects_to_channel(4, 2).
+port_connects_to_channel(7, 2).
+port_connects_to_channel(5, 3).
+port_connects_to_channel(10, 3).
+port_connects_to_channel(6, 4).
+port_connects_to_channel(13, 4).
+port_connects_to_channel(9, 5).
+port_connects_to_channel(16, 5).
+port_connects_to_channel(12, 6).
+port_connects_to_channel(17, 6).
+port_connects_to_channel(15, 7).
+port_connects_to_channel(18, 7).
+port_connects_to_channel(20, 8).
+port_connects_to_channel(21, 9).
+port_connects_to_channel(22, 10).
+port_connects_to_channel(2, 11).
+port_connects_to_channel(20, 12).
+port_connects_to_channel(21, 13).
+port_connects_to_channel(22, 14).
+
+% FACT: inflow_connects_to_channel(port_id, channel_id).
+inflow_connects_to_channel(1, 1).
+inflow_connects_to_channel(1, 11).
+
+% FACT: outflow_connects_to_channel(port_id, channel_id).
+outflow_connects_to_channel(23, 8).
+outflow_connects_to_channel(24, 9).
+outflow_connects_to_channel(25, 10).
+outflow_connects_to_channel(23, 12).
+outflow_connects_to_channel(24, 13).
+outflow_connects_to_channel(25, 14).
+
+% FACT: uri_variable(uri_variable_id, variable_name, port_id).
+
+% FACT: log_template(log_template_id, port_id, entry_template, log_annotation_id).
+
+% FACT: log_template_variable(log_variable_id, variable_name, log_template_id).
+
+% FACT: extract_source(source_id, source_path).
+extract_source(1, '').
+
+% FACT: annotation(annotation_id, source_id, line_number, tag, keyword, value).
+annotation(1, 1, 2, 'begin', '@begin', 'Farmers_Markets_Data_Cleaning_E2E').
+annotation(2, 1, 2, 'desc', '@desc', 'your code here or load one of the sample scripts').
+annotation(3, 1, 3, 'in', '@in', 'farmersmarkets.csv').
+annotation(4, 1, 3, 'uri', '@uri', 'file://data/farmersmarkets.csv').
+annotation(5, 1, 5, 'begin', '@begin', 'CleanFarmersMarketDataWithOpenRefine').
+annotation(6, 1, 5, 'desc', '@desc', 'Use OpenRefine to clean farmersmarkets.csv').
+annotation(7, 1, 6, 'in', '@in', 'farmersmarkets.csv').
+annotation(8, 1, 6, 'uri', '@uri', 'file://data/farmersmarkets.csv').
+annotation(9, 1, 7, 'param', '@param', 'CleanFarmersMarketDataActivties').
+annotation(10, 1, 8, 'out', '@out', 'FarmersMarkets-Address.csv').
+annotation(11, 1, 8, 'uri', '@uri', 'file://data/clean/FarmersMarkets-Address.csv').
+annotation(12, 1, 9, 'out', '@out', 'FarmersMarkets-Products.csv').
+annotation(13, 1, 9, 'uri', '@uri', 'file://data/clean/FarmersMarkets-Products.csv').
+annotation(14, 1, 10, 'out', '@out', 'FarmersMarkets-SocialMedia.csv').
+annotation(15, 1, 10, 'uri', '@uri', 'file://data/clean/FarmersMarkets-SocialMedia.csv').
+annotation(16, 1, 11, 'end', '@end', 'CleanFarmersMarketDataWithOpenRefine').
+annotation(17, 1, 13, 'begin', '@begin', 'SQLOperationsOnfarmersmarketsAddress').
+annotation(18, 1, 13, 'desc', '@desc', 'Use SQLLite to load FarmersMarketAdrress into table').
+annotation(19, 1, 14, 'in', '@in', 'FarmersMarkets-Address.csv').
+annotation(20, 1, 14, 'uri', '@uri', 'file://data/clean/FarmersMarkets-Address.csv').
+annotation(21, 1, 15, 'param', '@param', 'FarmersMarketsAdressImport').
+annotation(22, 1, 16, 'out', '@out', 'Farmers_Markets_Address').
+annotation(23, 1, 16, 'uri', '@uri', 'sqlite://FarmersMarket.db/Farmers_Markets_Address').
+annotation(24, 1, 17, 'end', '@end', 'SQLOperationsOnfarmersmarketsAddress').
+annotation(25, 1, 19, 'begin', '@begin', 'SQLOperationsOnfarmersmarketsProducts').
+annotation(26, 1, 19, 'desc', '@desc', 'Use SQLLite to load FarmersMarketProducts into table').
+annotation(27, 1, 20, 'in', '@in', 'FarmersMarkets-Products.csv').
+annotation(28, 1, 20, 'uri', '@uri', 'file://data/clean/FarmersMarkets-Products.csv').
+annotation(29, 1, 21, 'param', '@param', 'FarmersMarketsProductsImport').
+annotation(30, 1, 22, 'out', '@out', 'Farmers_Markets_Products').
+annotation(31, 1, 22, 'uri', '@uri', 'sqlite://FarmersMarket.db/Farmers_Markets_Products').
+annotation(32, 1, 23, 'end', '@end', 'SQLOperationsOnfarmersmarketsProducts').
+annotation(33, 1, 25, 'begin', '@begin', 'SQLOperationsOnfarmersmarketsSocialMedia').
+annotation(34, 1, 25, 'desc', '@desc', 'Use SQLLite to load FarmersMarketSocialMedia into table').
+annotation(35, 1, 26, 'in', '@in', 'FarmersMarkets-SocialMedia.csv').
+annotation(36, 1, 26, 'uri', '@uri', 'file://data/clean/FarmersMarkets-SocialMedia.csv').
+annotation(37, 1, 27, 'param', '@param', 'FarmersMarketsSocialMediaImport').
+annotation(38, 1, 28, 'out', '@out', 'Farmers_Markets_SocialMedia').
+annotation(39, 1, 28, 'uri', '@uri', 'sqlite://FarmersMarket.db/Farmers_Markets_SocialMedia').
+annotation(40, 1, 29, 'end', '@end', 'SQLOperationsOnfarmersmarketsSocialMedia').
+annotation(41, 1, 31, 'begin', '@begin', 'SQLConstrainsValidations').
+annotation(42, 1, 31, 'desc', '@desc', 'Perform SQL integrity constraints check').
+annotation(43, 1, 32, 'in', '@in', 'Farmers_Markets_Address').
+annotation(44, 1, 32, 'uri', '@uri', 'sqlite://FarmersMarket.db/Farmers_Markets_Address').
+annotation(45, 1, 33, 'in', '@in', 'Farmers_Markets_Products').
+annotation(46, 1, 33, 'uri', '@uri', 'sqlite://FarmersMarket.db/Farmers_Markets_Products').
+annotation(47, 1, 34, 'in', '@in', 'Farmers_Markets_SocialMedia').
+annotation(48, 1, 34, 'uri', '@uri', 'sqlite://FarmersMarket.db/Farmers_Markets_SocialMedia').
+annotation(49, 1, 35, 'param', '@param', 'IntegrityConstraint_FunctionalDependenciesScript').
+annotation(50, 1, 36, 'out', '@out', 'Farmers_Markets_Address_Final').
+annotation(51, 1, 36, 'uri', '@uri', 'sqlite://FarmersMarket.db/Farmers_Markets_Address').
+annotation(52, 1, 37, 'out', '@out', 'Farmers_Markets_Products_Final').
+annotation(53, 1, 37, 'uri', '@uri', 'sqlite://FarmersMarket.db/Farmers_Markets_Products').
+annotation(54, 1, 38, 'out', '@out', 'Farmers_Markets_SocialMedia_Final').
+annotation(55, 1, 38, 'uri', '@uri', 'sqlite://FarmersMarket.db/Farmers_Markets_SocialMedia').
+annotation(56, 1, 39, 'end', '@end', 'SQLConstrainsValidations').
+annotation(57, 1, 41, 'out', '@out', 'Farmers_Markets_Address_Final').
+annotation(58, 1, 41, 'uri', '@uri', 'sqlite://FarmersMarket.db/Farmers_Markets_Address').
+annotation(59, 1, 42, 'out', '@out', 'Farmers_Markets_Products_Final').
+annotation(60, 1, 42, 'uri', '@uri', 'sqlite://FarmersMarket.db/Farmers_Markets_Products').
+annotation(61, 1, 43, 'out', '@out', 'Farmers_Markets_SocialMedia_Final').
+annotation(62, 1, 43, 'uri', '@uri', 'sqlite://FarmersMarket.db/Farmers_Markets_SocialMedia').
+annotation(63, 1, 46, 'end', '@end', 'Farmers_Markets_Data_Cleaning_E2E').
+
+% FACT: annotation_qualifies(qualifying_annotation_id, primary_annotation_id).
+annotation_qualifies(2, 1).
+annotation_qualifies(4, 3).
+annotation_qualifies(6, 5).
+annotation_qualifies(8, 7).
+annotation_qualifies(11, 10).
+annotation_qualifies(13, 12).
+annotation_qualifies(15, 14).
+annotation_qualifies(18, 17).
+annotation_qualifies(20, 19).
+annotation_qualifies(23, 22).
+annotation_qualifies(26, 25).
+annotation_qualifies(28, 27).
+annotation_qualifies(31, 30).
+annotation_qualifies(34, 33).
+annotation_qualifies(36, 35).
+annotation_qualifies(39, 38).
+annotation_qualifies(42, 41).
+annotation_qualifies(44, 43).
+annotation_qualifies(46, 45).
+annotation_qualifies(48, 47).
+annotation_qualifies(51, 50).
+annotation_qualifies(53, 52).
+annotation_qualifies(55, 54).
+annotation_qualifies(58, 57).
+annotation_qualifies(60, 59).
+annotation_qualifies(62, 61).

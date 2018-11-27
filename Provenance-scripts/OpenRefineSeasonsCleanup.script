@@ -1,0 +1,92 @@
+''' 
+@begin OpenRefineFarmersMarketSeasonsDateCleanup @desc your code here or load one of the sample scripts
+@in farmersmarkets.csv @uri file://data/farmersmarkets.csv
+
+    @begin Season1_Start_Date @desc grel:substring(value,0,10) of Season1Date
+    @in farmersmarkets.csv @uri file://data/farmersmarkets.csv
+    @out SubstringDataSet
+    @end Season1_Start_Date
+
+    @begin ConvertDateFormat @desc grel:toString(toDate(value),\"MM/dd/yyyy\")
+    @in SubstringDataSet 
+    @out GRELDataSet
+    @end ConvertDateFormat
+    
+    @begin TrimReplaceSeason1StartDate @desc value.trim()&value.Replace()special characters-Seanson1_Start_Date
+    @in GRELDataSet 
+    @out TrimmedDataSet
+    @end TrimReplaceStartDate
+    
+    @begin FarmersSeasonsSet @desc fully cleaned data set - export dataset into .CSV
+    @in TrimmedDataSet
+    @out FarmersMarkets-Seasons.csv @uri file://data/clean/FarmersMarkets-Seasons.csv 
+    @end FarmersSeasonsSet
+
+    @begin Season1_End_Date @desc grel:substring(value,13,24) of Season1Date
+    @in farmersmarkets.csv @uri file://data/farmersmarkets.csv
+    @out SubstringDataSet
+    @end Season1_End_Date
+
+    @begin ConvertDateFormat @desc grel:toString(toDate(value),\"MM/dd/yyyy\")
+    @in SubstringDataSet 
+    @out GRELDataSet
+    @end ConvertDateFormat
+    
+    @begin TrimReplaceSeason1EndDate @desc value.trim()&value.Replace()special characters-Seanson2_End_Date
+    @in GRELDataSet 
+    @out TrimmedDataSet
+    @end TrimReplaceEndDate
+    
+    @begin FarmersSeasonsSet @desc fully cleaned data set - export dataset into .CSV
+    @in TrimmedDataSet
+    @out FarmersMarkets-Seasons.csv @uri file://data/clean/FarmersMarkets-Seasons.csv 
+    @end FarmersSeasonsSet
+ 
+ -----------    season 2 date
+ 
+    @begin Season2_Start_Date @desc grel:substring(value,0,10) of Season2Date
+    @in farmersmarkets.csv @uri file://data/farmersmarkets.csv
+    @out SubstringDataSet
+    @end Season2_Start_Date
+
+    @begin ConvertDateFormat @desc grel:toString(toDate(value),\"MM/dd/yyyy\")
+    @in SubstringDataSet 
+    @out GRELDataSet
+    @end ConvertDateFormat
+    
+    @begin TrimReplaceSeason2StartDate @desc value.trim()&value.Replace()special characters-Seanson2_Start_Date
+    @in GRELDataSet 
+    @out TrimmedDataSet
+    @end TrimReplaceS2StartDate
+    
+    @begin FarmersSeasonsSet @desc fully cleaned data set - export dataset into .CSV
+    @in TrimmedDataSet
+    @out FarmersMarkets-Seasons.csv @uri file://data/clean/FarmersMarkets-Seasons.csv 
+    @end FarmersSeasonsSet
+
+    @begin Season2_End_Date @desc grel:substring(value,13,24) of Season2Date
+    @in farmersmarkets.csv @uri file://data/farmersmarkets.csv
+    @out SubstringDataSet
+    @end Season2_End_Date
+
+    @begin ConvertDateFormat @desc grel:toString(toDate(value),\"MM/dd/yyyy\")
+    @in SubstringDataSet 
+    @out GRELDataSet
+    @end ConvertDateFormat
+    
+    @begin TrimReplaceSeason2EndDate @desc value.trim()&value.Replace()special characters-Seanson2_End_Date
+    @in GRELDataSet 
+    @out TrimmedDataSet
+    @end TrimReplaceEndDate
+    
+    @begin FarmersSeasonsSet @desc fully cleaned data set - export dataset into .CSV
+    @in TrimmedDataSet
+    @out FarmersMarkets-Seasons.csv @uri file://data/clean/FarmersMarkets-Seasons.csv 
+    @end FarmersSeasonsSet
+
+
+    
+@out FarmersMarkets-Seasons.csv @uri file://data/clean/FarmersMarkets-Seasons.csv 
+@end OpenRefineFarmersMarketSeasonsDateCleanup
+
+'''

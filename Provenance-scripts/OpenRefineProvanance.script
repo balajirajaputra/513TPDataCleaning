@@ -1,0 +1,85 @@
+  ''' 
+@begin OpenRefineCleaning @desc your code here or load one of the sample scripts
+@in farmersmarkets.csv @uri file://data/farmersmarkets.csv
+
+    @begin Street @desc value.trim () - leading and trailing whitespace
+    @param triming_leading_whitespace
+    @in farmersmarkets.csv @uri file://data/farmersmarkets.csv
+    @out TrimmedDataSet
+    @end Street
+
+    @begin TrimStreet @desc value.replace & grel:value.replace
+    @param GREL_Value_Replace_Special_values
+    @in TrimmedDataSet 
+    @out GRELDataSet
+    @end TrimStreet
+    
+    @begin ClusteredStreet @desc Clustered KeyCollision and Fingerprint  - mass update
+    @param Cluster_DataSet
+    @in GRELDataSet 
+    @out CleanedDataSet
+    @end ClusteredStreet
+    
+    @begin FarmersAddressSet @desc fully cleaned data set
+    @in CleanedDataSet
+    @param Export_Into.CSV_AdressFile
+    @out FarmersMarkets-Address.csv @uri file://data/clean/FarmersMarkets-Address.csv 
+    @end FarmersAddressSet
+    
+    ------------
+    
+    @begin City @desc value.trim () - leading and trailing whitespace
+    @param triming_leading_whitespace
+    @in farmersmarkets.csv @uri file://data/farmersmarkets.csv
+    @out TrimmedDataSet
+    @end City
+
+    @begin TrimCity @desc value.replace & grel:value.replace
+    @param GREL_Value_Replace_Special_values
+    @in TrimmedDataSet 
+    @out GRELDataSet
+    @end TrimCity
+    
+    @begin ClusteredCity @desc Clustered KeyCollision and Fingerprint - mass update
+    @param Cluster_DataSet
+    @in GRELDataSet 
+    @out CleanedDataSet
+    @end ClusteredCity
+    
+    @begin FarmersAddressSet @desc fully cleaned data set
+    @in CleanedDataSet
+    @param Export_Into.CSV_AdressFile
+    @out FarmersMarkets-Address.csv @uri file://data/clean/FarmersMarkets-Address.csv 
+    @end FarmersAddressSet
+
+    -----------------
+    
+  
+    @begin County @desc value.trim () - leading and trailing whitespace
+    @param triming_leading_whitespace
+    @in farmersmarkets.csv @uri file://data/farmersmarkets.csv
+    @out TrimmedDataSet
+    @end County
+
+    @begin TrimCounty @desc value.replace & grel:value.replace
+    @param GREL_Value_Replace_Special_values
+    @in TrimmedDataSet 
+    @out GRELDataSet
+    @end TrimCounty
+    
+    @begin ClusteredCounty @desc Clustered KeyCollision and Fingerprint  - mass update
+    @param Cluster_DataSet
+    @in GRELDataSet 
+    @out CleanedDataSet
+    @end ClusteredCounty
+    
+    @begin FarmersAddressSet @desc fully cleaned data set
+    @in CleanedDataSet
+    @param Export_Into.CSV_AdressFile
+    @out FarmersMarkets-Address.csv @uri file://data/clean/FarmersMarkets-Address.csv 
+    @end FarmersAddressSet
+
+
+@end OpenRefineCleaning
+
+'''

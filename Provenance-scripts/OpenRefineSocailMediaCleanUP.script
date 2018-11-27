@@ -1,0 +1,33 @@
+''' 
+''' 
+@begin OpenRefineFarmersMarketSociaMediaCleaning @desc your code here or load one of the sample scripts
+@in farmersmarkets.csv @uri file://data/farmersmarkets.csv
+
+    @begin TrimMarketName @desc value.trim () - leading and trailing whitespace
+    @param triming_leading_whitespace
+    @in farmersmarkets.csv @uri file://data/farmersmarkets.csv
+    @out TrimmedDataSet
+    @end TrimMarketName
+
+    @begin GRELMarketName @desc value.replace & grel:value.replace
+    @param GREL_Value_Replace_Special_values
+    @in TrimmedDataSet 
+    @out GRELDataSet
+    @end GRELMarketName
+    
+    @begin ClusteredMarketName @desc Clustered KeyCollision and Fingerprint  - mass update
+    @param Cluster_DataSet
+    @in GRELDataSet 
+    @out ClusteredDataSet
+    @end ClusteredMarketName
+    
+    @begin FarmersSocialMediaSet @desc fully cleaned data set
+    @in ClusteredDataSet
+    @param Export_Into.CSV_SocialMediaFile
+    @out FarmersMarkets-SocialMedia.csv @uri file://data/clean/FarmersMarkets-SocialMedia.csv 
+    @end FarmersAddressSet
+    
+@out FarmersMarkets-SocialMedia.csv @uri file://data/clean/FarmersMarkets-SocialMedia.csv 
+@end OpenRefineFarmersMarketSociaMediaCleaning
+
+'''
